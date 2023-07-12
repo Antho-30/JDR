@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Sheet</title>
+    <link rel="stylesheet" href="generic_sheet.css">
+    <script src="generic_sheet.js" defer></script>
+</head>
+
+<body>
+
+
+    <div class="content-row">
+        <input style="height:20px" id="CALCUL" type="checkbox" class="field-data-short"></input><p class="field-desc">SERT UNIQUEMENT A RECALCULER</p>
+    </div>
+
+    <div class="container">
+        <h1>PERSONNAGE</h1>
+        <div class="content-row">
+            <input id="Personnage" type="text" class="field-data"></input><p class="field-desc">Personnage</p>
+        </div>
+        <div class="content-row">
+            <input id="classe" type="text" class="field-data"></input><p class="field-desc">Classe</p>
+        </div>
+        <div class="content-row">
+            <input id="Race" type="text" class="field-data"></input><p class="field-desc">Race</p>
+        </div>
+        <div class="content-row">
+            <input id="alignment" type="text" class="field-data"></input><p class="field-desc">Divinite</p>
+        </div>
+        <div class="content-row">
+            <input id="level" type="number" class="field-data"></input><p class="field-desc">Niveau</p>
+        </div>
+        <div class="content-row">
+            </label><input id="Age_Sexe" type="text" class="field-data"></input><p class="field-desc">Age et Sexe</p>
+        </div>
+        <div class="content-row">
+        </label><input id="Taille et poids" type="text" class="field-data"></input><p class="field-desc">Taille et poids</p>
+        </div>
+    </div>
+
+    <!-- Statistiques -->
+
+    <div class="container columns-2">
+        <div class="container">
+            <h1>MODIF</h1>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_FOR" data-modifier="MODIF_FOR">FOR</label><input TYPE="number" ID="MODIF_FOR"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_DEX" data-modifier="MODIF_DEX">DEX</label><input TYPE="number" ID="MODIF_DEX"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_CON" data-modifier="MODIF_CON">CON</label><input TYPE="number" ID="MODIF_CON"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_SAG" data-modifier="MODIF_SAG">SAG</label><input TYPE="number" ID="MODIF_SAG"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_INT" data-modifier="MODIF_INT">INT</label><input TYPE="number" ID="MODIF_INT"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_CHA" data-modifier="MODIF_CHA">CHA</label><input TYPE="number" ID="MODIF_CHA"  disabled="disabled" style="width:60px;" class="field-data2"/>
+            </div>
+        </div>
+        <div class="container">
+            <h1>STAT</h1>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTFOR"  disabled="disabled" style="width:60px" class="field-data2" />
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTDEX"  disabled="disabled" style="width:60px;" class="field-data2" />
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTCON"  disabled="disabled" style="width:60px;" class="field-data2" />
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTSAG"  disabled="disabled" style="width:60px;" class="field-data2" />
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTINT"  disabled="disabled" style="width:60px;" class="field-data2" />
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="TOTCHA"  disabled="disabled" style="width:60px;" class="field-data2" />
+            </div>
+        </div>
+        <div class="container" style="width:15%">
+            <h1>MALUS</h1>
+            <div class="content-row">
+                <input id="MFOR" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="MDEX" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="MCON" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="MSAG" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="MINT" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="MCHA" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+        </div>
+        <div class="container">
+            <h1>BONUS</h1>
+            <div class="content-row">
+                <input id="BFOR" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="BDEX" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="BCON" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="BSAG" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="BINT" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="BCHA" type="number" style="width:60px;" class="field-data2"></input>
+            </div>
+        </div>
+        <div class="container">
+            <h1>LEVEL</h1>
+            <div class="content-row">
+                <input id="LFOR" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="LDEX" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="LCON" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="LSAG" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="LINT" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+            <div class="content-row">
+                <input id="LCHA" type="number" style="width:40px;" class="field-data2"></input>
+            </div>
+        </div>
+        <div class="content-row" style="width:100%">
+            <label class="NotesStats">Notes</label><textarea id="NotesStats-Text" aria-labelledby="NotesStats-Section" style="width:500px"></textarea>
+        </div>
+    </div>
+
+
+    <!-- Combat-->
+
+    <div class="container columns-2">
+        <div class="content-row" style="width: 100%">
+            <h1>Combat</h1>
+        </div>
+        <div class="container">
+            <div class="content-row">
+                <label class="field-title">PV</label><input TYPE="number" ID="PVActuels" style="width:60px;" class="field-data2"/><p class="field-desc">PV Actuel</p>
+            </div>
+            <div class="content-row">
+                <label class="field-title">PM</label><input TYPE="number" ID="ManaActuel" style="width:60px;" class="field-data2"/><p class="field-desc">PM Actuel</p>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_INIT" data-modifier="MODIF_INT">INIT</label><input TYPE="number" ID="Initiative"  disabled="disabled" style="width:2px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="Deplacement"  disabled="disabled" style="width:5px;" class="field-data2"/><p class="field-desc">Deplacement</p>
+            </div>
+            <h1>Precision</h1>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_PRECISIONCAC" data-modifier="MODIF_DEX">CAC</label><input TYPE="number" ID="PrecisionCAC"  disabled="disabled" style="width:2px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_PRECISIONDIS" data-modifier="MODIF_DEX">DIS</label><input TYPE="number" ID="PrecisionDIS"  disabled="disabled" style="width:2px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_PRECISIONMAG" data-modifier="MODIF_INT">MAG</label><input TYPE="number" ID="PrecisionMAG"  disabled="disabled" style="width:2px;" class="field-data2"/>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-row">
+                <input TYPE="number" ID="PVTOT"  disabled="disabled" style="width:60px;" class="field-data2"/><p class="field-desc">PV TOT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="PMTOT"  disabled="disabled" style="width:60px;" class="field-data2"/><p class="field-desc">PM TOT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="CAPHYTOT"  disabled="disabled" style="width:20px;" class="field-data2"/><p class="field-desc">CA PHY</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="Encombrement"  disabled="disabled" style="width:5px;" class="field-data2"/><p class="field-desc">Encombrement</p>
+            </div>
+            <h1>Sauvegarde</h1>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_Reflexe" data-modifier="MODIF_DEX" style="width:73px;">Reflexe</label><input TYPE="number" ID="Reflexe"  disabled="disabled" style="width:1px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_Vigueur" data-modifier="MODIF_CON" style="width:73px;">Vigueur</label><input TYPE="number" ID="Vigueur"  disabled="disabled" style="width:1px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_Volonte" data-modifier="MODIF_SAG" style="width:73px;">Volonte</label><input TYPE="number" ID="Volonte"  disabled="disabled" style="width:1px;" class="field-data2"/>
+            </div>
+        </div>
+        <div class="container">
+            <div class="content-row">
+                <input TYPE="number" ID="PVRegen" disabled="disabled" style="width:60px;" class="field-data2"/><p class="field-desc">Regen PV</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="PMRegen" disabled="disabled" style="width:60px;" class="field-data2"/><p class="field-desc">Regen PM</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="CAMAGTOT"  disabled="disabled" style="width:20px;" class="field-data2"/><p class="field-desc">CA MAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="Ressourcescondaire" style="width:60px;" class="field-data2"/><p class="field-desc">Rage/PI/KI/CV</p>
+            </div>
+            <h1>Bloc/Esqu</h1>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_Blocage" data-modifier="BLOCAGE" style="width:73px;">Blocage</label><input TYPE="number" ID="BLOCAGE"  disabled="disabled" style="width:1px;" class="field-data2"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="JET_ESQUIVE" data-modifier="ESQUIVE" style="width:73px;">Esquive</label><input TYPE="number" ID="ESQUIVE"  disabled="disabled" style="width:1px;" class="field-data2"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Armes -->
+
+    <div class="container columns-2">
+        <div class="container" style="width:150px;">
+            <h1>Arme 1</h1>
+            <div class="content-row">
+                <input id="NomArme1" input TYPE="Text" class="field-data2" style="width:90%;" style="font-size: em;" ></input>
+            </div>
+            <div class="content-row">
+                <input id="DegatArme1" type="Text" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">Degats</p>
+            </div>
+            <div class="content-row">
+                <input id="PorteeArme1" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">Portee</p>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionArme1"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width:150px;">
+            <h1>Arme 2</h1>
+            <div class="content-row">
+                <input id="NomArme 2" input TYPE="Text" class="field-data2" style="width:90%;" ></input>
+            </div>
+            <div class="content-row">
+                <input id="DegatArme2" type="Text" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">Degats</p>
+            </div>
+            <div class="content-row">
+                <input id="PorteeArme2" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">Portee</p>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionArme2"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width:200px;">
+            <h1>Bouclier</h1>
+            <div class="content-row">
+                <input id="NomBouclier" input TYPE="Text" class="field-data2" style="width:90%;" ></input>
+            </div>
+            <div class="container columns-2">
+                <div class="content-row">
+                    <input id="Degatsbouclier" type="text" class="field-data2" style="width:60px;" ></input></input><p class="field-desc">Degats</p>
+                </div>
+                <div class="content-row">
+                    <input id="BlocageBouclier" type="number" class="field-data2" style="width:30px;" ></input></input><p class="field-desc">blocage</p>
+                </div>
+            </div>
+            <div class="container columns-2">
+                <div class="content-row">
+                    <input id="CAPHYBouclier" type="number" class="field-data2" style="width:40px;" ></input></input><p class="field-desc">CA PHY</p>
+                </div>
+                <div class="content-row">
+                    <input id="CAMAGBouclier" type="number" class="field-data2" style="width:40px;" ></input></input><p class="field-desc">CA MAG</p>
+                </div>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionBouclier"></textarea>
+            </div>
+        </div>
+    </div>
+
+     <!-- Equipement -->
+
+     <div class="container columns-2">
+        <div class="container" style="width:160px;">
+            <h1>Casque</h1>
+            <div class="content-row">
+                <input id="NomCasque" input TYPE="Text" class="field-data2" style="width:90%;" style="font-size: em;" ></input>
+            </div>
+            <div class="content-row">
+                <input id="CAPHYCasque" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA PHY</p>
+            </div>
+            <div class="content-row">
+                <input id="CAMAGCasque" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA MAG</p>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionCasque"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width:160px;">
+            <h1>Armure</h1>
+            <div class="content-row">
+                <input id="NomArmure" input TYPE="Text" class="field-data2" style="width:90%;" ></input>
+            </div>
+            <div class="content-row">
+                <input id="CAPHYArmure" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA PHY</p>
+            </div>
+            <div class="content-row">
+                <input id="CAMAGArmure" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA MAG</p>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionArmure"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width:160px;">
+            <h1>Jambieres</h1>
+            <div class="content-row">
+                <input id="NomJambieres" input TYPE="Text" class="field-data2" style="width:90%;" ></input>
+            </div>
+            <div class="content-row">
+                <input id="CAPHYJambieres" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA PHY</p>
+            </div>
+            <div class="content-row">
+                <input id="CAMAGJambieres" type="number" class="field-data2" style="width:2px;" ></input></input><p class="field-desc">CA MAG</p>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="DescriptionJambieres"></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <h1>Objets magiques</h1>
+    <div class="content-row" style="width:100%">
+        <textarea id="Objetsmagiques-Text" aria-labelledby="Objetsmagiques-Section" style="width:500px"></textarea>
+    </div>
+    <h1>INVENTAIRE</h1>
+    <div class="container columns-2">
+        <div class="content-row" style="width:70%">
+            <textarea id="INVENTAIRE-Text" aria-labelledby="INVENTAIRE-Section" style="width:500px"></textarea>
+        </div>
+    <div class="container columns-2">
+        <div class="content-row" style="width:30%">
+            <input id="PO" type="text" class="field-data2" style="width:60px;" ></input></input><p class="field-desc">PO</p>
+        </div>
+    </div>
+   
+    <!-- Ici on attaque les competences -->
+
+    <h1>COMPETENCES</h1>
+    <div class="container columns-2">
+        <div class="container" style="width: 20%">
+            <h1>Nom</h1>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence1"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence2"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence3"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence4"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence5"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence6"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence7"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence8"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence9"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea class="textarea2" id="Nomcompetence10"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width: 12%">
+            <h1>Cout</h1>
+            <div class="content-row">
+                <textarea id="ManaCompetence1"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence2"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence3"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence4"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence5"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence6"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence7"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence8"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence9"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="ManaCompetence10"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width: 40%">
+            <h1>Description</h1>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence1"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence2"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence3"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence4"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence5"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence6"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence7"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence8"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence9"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="Descriptioncompetence10"></textarea>
+            </div>
+        </div>
+        <div class="container" style="width: 15%">
+            <h1>Degats</h1>
+            <div class="content-row">
+                <textarea id="degatscompetence1"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence2"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence3"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence4"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence5"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence6"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence7"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence8"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence9"></textarea>
+            </div>
+            <div class="content-row">
+                <textarea id="degatscompetence10"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <h1>CONNAISSANCES</h1>
+    <div class="container columns-2">
+        <div class="container">
+            <h1>Connaissance</h1>
+            <div class="content-row" >
+                <label class="field-title" data-dice-type="1d20" data-label="LArtdelamagie" data-modifier="TOTAcrobaties" style="width:200px">Acrobaties</label><input TYPE="number" ID="TOTAcrobaties"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LArtdelamagie" data-modifier="TOTArtdelamagie" style="width:200px">Art de la magie</label><input TYPE="number" ID="TOTArtdelamagie"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LArtisanat(Alchimie)" data-modifier="TOTArtisanat(Alchimie)" style="width:200px">Artisanat (Alchimie)</label><input TYPE="number" ID="TOTArtisanat(Alchimie)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LBluff" data-modifier="TOTBluff" style="width:200px">Bluff</label><input TYPE="number" ID="TOTBluff"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConcentration" data-modifier="TOTConcentration" style="width:200px">Concentration</label><input TYPE="number" ID="TOTConcentration"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissances(architecture)" data-modifier="TOTConnaissances(architecture)" style="width:200px">Conn (architecture)</label><input TYPE="number" ID="TOTConnaissances(architecture)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissances(Mysteres)" data-modifier="TOTConnaissances(Mysteres)" style="width:200px">Conn (Mysteres)</label><input TYPE="number" ID="TOTConnaissances(Mysteres)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissance(Histoire)" data-modifier="TOTConnaissance(Histoire)" style="width:200px">Conn (Histoire)</label><input TYPE="number" ID="TOTConnaissance(Histoire)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissance(Nature)" data-modifier="TOTConnaissance(Nature)" style="width:200px">Conn (Nature)</label><input TYPE="number" ID="TOTConnaissance(Nature)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissance(Cultures)" data-modifier="TOTConnaissance(Cultures)" style="width:200px">Conn (Cultures)</label><input TYPE="number" ID="TOTConnaissance(Cultures)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissance(Noblesse)" data-modifier="TOTConnaissance(Noblesse)" style="width:200px">Conn (Noblesse)</label><input TYPE="number" ID="TOTConnaissance(Noblesse)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LConnaissance(Religion)" data-modifier="TOTConnaissance(Religion)" style="width:200px">Conn (Religion)</label><input TYPE="number" ID="TOTConnaissance(Religion)"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LContrefacon" data-modifier="TOTContrefacon" style="width:200px">Contrefacon</label><input TYPE="number" ID="TOTContrefacon"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LCrochetage" data-modifier="TOTCrochetage" style="width:200px">Crochetage</label><input TYPE="number" ID="TOTCrochetage"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDecryptage" data-modifier="TOTDecryptage" style="width:200px">Decryptage</label><input TYPE="number" ID="TOTDecryptage"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDeguisement" data-modifier="TOTDeguisement" style="width:200px">Deguisement</label><input TYPE="number" ID="TOTDeguisement"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDeplacementsilencieux" data-modifier="TOTDeplacementsilencieux" style="width:200px">Deplacmt silencieux</label><input TYPE="number" ID="TOTDeplacementsilencieux"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDesamorcage" data-modifier="TOTDesamorcage" style="width:200px">Desamorcage</label><input TYPE="number" ID="TOTDesamorcage"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDetection" data-modifier="TOTDetection" style="width:200px">Detection</label><input TYPE="number" ID="TOTDetection"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDiplomatie" data-modifier="TOTDiplomatie" style="width:200px">Diplomatie</label><input TYPE="number" ID="TOTDiplomatie"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDiscretion" data-modifier="TOTDiscretion" style="width:200px">Discretion</label><input TYPE="number" ID="TOTDiscretion"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LDressage" data-modifier="TOTDressage" style="width:200px">Dressage</label><input TYPE="number" ID="TOTDressage"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEmpathieanimaux" data-modifier="TOTEmpathieanimaux" style="width:200px">Empathie animaux</label><input TYPE="number" ID="TOTEmpathieanimaux"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEquilibre" data-modifier="TOTEquilibre" style="width:200px">Equilibre</label><input TYPE="number" ID="TOTEquilibre"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEquitation" data-modifier="TOTEquitation" style="width:200px">Equitation</label><input TYPE="number" ID="TOTEquitation"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEscalade" data-modifier="TOTEscalade" style="width:200px">Escalade</label><input TYPE="number" ID="TOTEscalade"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEstimation" data-modifier="TOTEstimation" style="width:200px">Estimation</label><input TYPE="number" ID="TOTEstimation"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LEvasion" data-modifier="TOTEvasion" style="width:200px">Evasion</label><input TYPE="number" ID="TOTEvasion"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LFouille" data-modifier="TOTFouille" style="width:200px">Fouille</label><input TYPE="number" ID="TOTFouille"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LIntimidation" data-modifier="TOTIntimidation" style="width:200px">Intimidation</label><input TYPE="number" ID="TOTIntimidation"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LLangagesecret" data-modifier="TOTLangagesecret" style="width:200px">Langages ecret</label><input TYPE="number" ID="TOTLangagesecret"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LLecturesurleslevres" data-modifier="TOTLecturesurleslevres" style="width:200px">Lecture sur les levres</label><input TYPE="number" ID="TOTLecturesurleslevres"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LMaitrisedescordes" data-modifier="TOTMaitrisedescordes" style="width:200px">Maitrise des cordes</label><input TYPE="number" ID="TOTMaitrisedescordes"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LNatation" data-modifier="TOTNatation" style="width:200px">Natation</label><input TYPE="number" ID="TOTNatation"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LPerceptionauditive" data-modifier="TOTPerceptionauditive" style="width:200px">Perception auditive</label><input TYPE="number" ID="TOTPerceptionauditive"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LPremierssecours" data-modifier="TOTPremierssecours" style="width:200px">Premiers secours</label><input TYPE="number" ID="TOTPremierssecours"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LPsychologie" data-modifier="TOTPsychologie" style="width:200px">Psychologie</label><input TYPE="number" ID="TOTPsychologie"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LRenseignement" data-modifier="TOTRenseignement" style="width:200px">Renseignement</label><input TYPE="number" ID="TOTRenseignement"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LSaut" data-modifier="TOTSaut" style="width:200px">Saut</label><input TYPE="number" ID="TOTSaut"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LSensdelorientation" data-modifier="TOTSensdelorientation" style="width:200px">Sens de l'orientation</label><input TYPE="number" ID="TOTSensdelorientation"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LSurvie" data-modifier="TOTSurvie" style="width:200px">Survie</label><input TYPE="number" ID="TOTSurvie"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LUtilisationobjetsmagiques" data-modifier="TOTUtilisationobjetsmagiques" style="width:200px">Utilis. objets magiques</label><input TYPE="number" ID="TOTUtilisationobjetsmagiques"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+            <div class="content-row">
+                <label class="field-title" data-dice-type="1d20" data-label="LVolalatire" data-modifier="TOTVolalatire" style="width:200px">Vol a la tire</label><input TYPE="number" ID="TOTVolalatire"  disabled="disabled" class="field-data2" style="width:60px"/>
+            </div>
+        </div>
+
+        <div class="container" style="width:12%">
+            <h1>Acq</h1>
+            <div class="content-row">
+                <input  style="height:20px" id="Acrobaties" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Artdelamagie" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Artisanat(Alchimie)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Bluff" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Concentration" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissances(architecture)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissances(Mysteres)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissance(Histoire)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissance(Nature)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissance(Cultures)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissance(Noblesse)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Connaissance(Religion)" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Contrefacon" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Crochetage" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Decryptage" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Deguisement" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Deplacementsilencieux" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Desamorcage" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Detection" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Diplomatie" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Discretion" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Dressage" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Empathieanimaux" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Equilibre" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Equitation" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Escalade" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Estimation" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Evasion" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Fouille" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Intimidation" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Langagesecret" type="checkbox" class="field-data-short"></input>
+            </div>           
+            <div class="content-row">
+                <input style="height:20px" id="Lecturesurleslevres" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Maitrisedescordes" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Natation" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Perceptionauditive" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Premierssecours" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Psychologie" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Renseignement" type="checkbox" class="field-data-short"></input>
+            </div>      
+            <div class="content-row">
+                <input style="height:20px" id="Saut" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Sensdelorientation" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Survie" type="checkbox" class="field-data-short"></input>
+            </div> 
+            <div class="content-row">
+                <input style="height:20px" id="Utilisationobjetsmagiques" type="checkbox" class="field-data-short"></input>
+            </div>
+            <div class="content-row">
+                <input style="height:20px" id="Volalatire" type="checkbox" class="field-data-short"></input>
+            </div>     
+        </div>
+        <div class="container" style="width:15%">
+            <h1>Bonus</h1>
+            <div class="content-row">
+                <input TYPE="number" ID="BAcrobaties" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BArtdelamagie" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BArtisanat(Alchimie)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BBluff" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConcentration" class="field-data2" style="width:60px"/><p class="field-desc">CON</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissances(architecture)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissances(Mysteres)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissance(Histoire)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissance(Nature)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissance(Cultures)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissance(Noblesse)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BConnaissance(Religion)" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BContrefacon" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BCrochetage" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDecryptage" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDeguisement" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDeplacementsilencieux" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDesamorcage" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDetection" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDiplomatie" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDiscretion" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BDressage" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEmpathieanimaux" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEquilibre" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEquitation" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEscalade" class="field-data2" style="width:60px"/><p class="field-desc">FOR</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEstimation" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BEvasion" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BFouille" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BIntimidation" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BLangagesecret" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BLecturesurleslevres" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BMaitrisedescordes" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BNatation" class="field-data2" style="width:60px"/><p class="field-desc">FOR</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BPerceptionauditive" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BPremierssecours" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BPsychologie" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BRenseignement" class="field-data2" style="width:60px"/><p class="field-desc">CHA</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BSaut" class="field-data2" style="width:60px"/><p class="field-desc">FOR</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BSensdelorientation" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BSurvie" class="field-data2" style="width:60px"/><p class="field-desc">SAG</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BUtilisationobjetsmagiques" class="field-data2" style="width:60px"/><p class="field-desc">INT</p>
+            </div>
+            <div class="content-row">
+                <input TYPE="number" ID="BVolalatire" class="field-data2" style="width:60px"/><p class="field-desc">DEX</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-row" style="margin-bottom: 0">
+        <span style="flex-grow: 1"></span>
+        <button id="clear-storage" class="" style="margin: 3em 0 0 0" onclick="clearSheet()" disabled>Character Sheet Empty</button>
+    </div>
+
+</body>
+</html>

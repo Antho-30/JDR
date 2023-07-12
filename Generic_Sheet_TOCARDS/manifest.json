@@ -1,0 +1,24 @@
+{
+  "manifestVersion": 1,
+  "name": "Generic Character Sheet TOCARDS",
+  "entryPoint": "/generic_sheet.html",
+  "version": "0.1",
+  "descriptionFilePath": "/readme.md",
+  "api": {
+    "version": "0.1",
+    "initTimeout": 10,
+    "subscriptions": {
+      "symbiote": {
+        "onStateChangeEvent": "onStateChangeEvent"
+      }
+    }
+  },
+  "environment": {
+    "webViewBackgroundColor": "#000000",
+    "extras": [
+      "fonts",
+      "icons",
+      "colorStyles"
+    ]
+  }
+}
