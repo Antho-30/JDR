@@ -74,7 +74,7 @@ function onInputChange(input) {
         console.error("Failed to load data from local storage:", getBlobResponse);
     });
 
-    if (input.id == "abilities-text") {
+    if (input.id == "abilities-text1") {
         let actions = parseActions(input.value);
         addActions(actions);
     }
@@ -131,20 +131,20 @@ function addActions(results) {
     }
 
     //add new actions
-    let template = document.getElementById("abilities-template");
+    let template = document.getElementById("abilities-template1");
     let container = template.parentElement;
     for (let i = 0; i < results.length; i++) {
         let clonedAction = template.content.firstElementChild.cloneNode(true);
         clonedAction.id = "list-action" + i;
-        let title = clonedAction.querySelector("[id=abilities-template-title]");
+        let title = clonedAction.querySelector("[id=abilities-template-title1]");
         title.removeAttribute("id");
         title.textContent = results[i]["title"];
 
-        let description = clonedAction.querySelector("[id=abilities-template-desc]");
+        let description = clonedAction.querySelector("[id=abilities-template-desc1]");
         description.removeAttribute("id");
         description.textContent = results[i]["description"];
 
-        let button = clonedAction.querySelector("[id=abilities-template-button]");
+        let button = clonedAction.querySelector("[id=abilities-template-button1]");
         button.id = "action-button" + i;
         button.dataset.diceType = results[i]["dice"];
         button.dataset.label = results[i]["title"];
@@ -153,7 +153,7 @@ function addActions(results) {
             //we are not checking for success or failure here, but could easily by adding a .then (success) and .catch (failure)
         });
 
-        container.insertBefore(clonedAction, document.getElementById("abilities-text").parentElement);
+        container.insertBefore(clonedAction, document.getElementById("abilities-text1").parentElement);
     }
 }
 
@@ -188,7 +188,7 @@ function loadStoredData() {
                 element.dispatchEvent(new Event('change'));
             } else if (element.type == "checkbox") {
                 element.checked = value == "on" ? true : false;
-            } else if (key == "abilities-text") {
+            } else if (key == "abilities-text1") {
                 let results = parseActions(element.value);
                 addActions(results);
             }
@@ -359,7 +359,6 @@ function CALCUL(){
 
     document.getElementById('ESQUIVE').value = parseFloat(MODIF_DEX)-CALCULEncombrement(Encombrement);
     document.getElementById('BLOCAGE').value = parseFloat(MODIF_FOR)-CALCULEncombrement(Encombrement) + parseFloat(BlocageBouclier);
-
 
     document.getElementById('TOTAcrobaties').value = CALCULConnaissance("Acrobaties",MODIF_DEX,document.getElementById('BAcrobaties').value);
     document.getElementById('TOTArtdelamagie').value = CALCULConnaissance("Artdelamagie",MODIF_INT,document.getElementById('BArtdelamagie').value );
